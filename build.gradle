@@ -11,8 +11,7 @@ apply plugin: 'org.jetbrains.changelog'
 
 group 'dk.sunepoulsen.tes'
 
-def versionPropertyName = "${rootProject.name}.version"
-version "${project.property(versionPropertyName)}"
+version "${project.property('version')}"
 
 repositories {
     mavenLocal()
