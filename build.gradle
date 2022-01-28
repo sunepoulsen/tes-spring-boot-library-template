@@ -62,3 +62,9 @@ changelog {
     unreleasedTerm = "Unreleased work"
     groups = ["Features", "Fixed", "Security"]
 }
+
+release {
+    git {
+        requireBranch = 'main'
+    }
+}
