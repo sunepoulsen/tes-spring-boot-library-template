@@ -1,3 +1,5 @@
+import org.gradle.jvm.toolchain.JavaLanguageVersion
+
 import java.text.SimpleDateFormat
 
 plugins {
@@ -18,8 +20,11 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 
 dependencies {
     // Lombok
@@ -31,13 +36,18 @@ dependencies {
     implementation "org.slf4j:log4j-over-slf4j:${project.property('log4j-over-slf4j.version')}"
 
     // JUnit
-    testImplementation "junit:junit:${project.property('junit.version')}"
+    testImplementation "org.junit.vintage:junit-vintage-engine:${project.property('junit-jupiter.version')}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${project.property('junit-jupiter.version')}"
 
     // Spock
-    testImplementation "org.codehaus.groovy:groovy:2.5.12"
+    testImplementation "org.codehaus.groovy:groovy:${project.property('groovy.version')}"
     testImplementation "org.spockframework:spock-core:${project.property('spock-core.version')}"
     testImplementation "cglib:cglib-nodep:${project.property('cglib-nodep.version')}"
     testImplementation "org.objenesis:objenesis:${project.property('objenesis.version')}"
+}
+
+test {
+    useJUnitPlatform()
 }
 
 task allWrappers(type: Wrapper) {

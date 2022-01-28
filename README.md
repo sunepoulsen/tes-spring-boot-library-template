@@ -1,44 +1,19 @@
-# TES Spring Boot Template Backend
+# TES Spring Boot Library Template
 
-TODO: General description of this repository.
+This is a template to create new libraries to be used with solutions written with Spring Boot.
 
-## Purpose
+## Content
 
-TODO: Describe the purpose of this backend
+The template provides the following:
 
-## REST Endpoints
+- Gradle project files
+- README
+- CHANGELOG
+- Gradle plugin to manage the changelog file.
 
-The backend provide the following endpoints:
+## Existing code
 
-```
-GET /actuator/health
-```
+The template include some existing code to verify that the `build.gradle` is correct.
 
-Monitoring endpoint to see if the backend is running.
+The code has no purpose besides this and can safely be removed when the template is used.
 
-```
-GET /swagger-ui.html
-```
-
-Online swagger documentation of all endpoints.
-
-## Testing
-
-The component and stress tests are excluded from the normal build cycle. As this is 
-expected to be the normal cycle for daily development.
-
-### Component tests
-
-To run the component tests:
-
-```
-./gradlew -Pcomponent-tests :tes-spring-boot-template-component-tests:check
-```
-
-### Stress tests
-
-To run the stress tests:
-
-```
-./gradlew -Pstress-tests :tes-spring-boot-template-stress-tests:check
-```
