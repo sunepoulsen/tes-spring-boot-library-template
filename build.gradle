@@ -1,3 +1,5 @@
+import org.gradle.api.publish.maven.MavenPublication
+
 import java.text.SimpleDateFormat
 
 plugins {
@@ -5,8 +7,9 @@ plugins {
     id 'net.researchgate.release'
 }
 
-apply plugin: 'java'
+apply plugin: 'java-library'
 apply plugin: 'groovy'
+apply plugin: 'maven-publish'
 
 group 'dk.sunepoulsen.tes'
 version "${project.property('version')}"
@@ -14,6 +17,14 @@ version "${project.property('version')}"
 repositories {
     mavenLocal()
     mavenCentral()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
 }
 
 java {
