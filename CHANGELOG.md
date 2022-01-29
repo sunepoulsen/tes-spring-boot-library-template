@@ -9,7 +9,7 @@ Adhere to the following format:
 `- [Name of Jira-story or subtask](link to Jira-story): Description of the completed work`
 Example-entry:
 
-- [CRS-6104](https://jira.ccta.dk/browse/CRS-6104): Service for unpacking a FATCA zip file.
+- [TES-4](https://sunepoulsen.atlassian.net/browse/TES-4): Create a general logging library for Spring Boot
 
 For release-dates, use date-format: YYYY-MM-DD
 
